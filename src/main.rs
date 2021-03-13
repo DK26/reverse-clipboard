@@ -65,8 +65,8 @@ fn reverse_numbers(text: &str) -> Option<String> {
 }
 
 fn reverse_clipboard(text: &str) -> String {
+
 	text.lines()
-	//.rev()
 	.map(|line| 
 			if let Some(reversed_numbers_line) = reverse_numbers(line) {
 				format!("{}\r\n", &reverse(&reversed_numbers_line))
@@ -76,6 +76,7 @@ fn reverse_clipboard(text: &str) -> String {
 	)
 	.map(|line| reverse_brackets(&line))
 	.collect()
+	
 }
 
 fn main() {
